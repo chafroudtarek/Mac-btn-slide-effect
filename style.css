@@ -1,0 +1,82 @@
+.position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  background-color: rgb(50, 52, 52);
+}
+
+.container {
+  width: 280px;
+  height: 80px;
+  background: #0b0b0b;
+  border-radius: 13px;
+  display: flex;
+  padding-right: 20px;
+  padding-left: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 16px -2px rgb(250 250 250);
+}
+
+span {
+  color: #fff;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 20px;
+  text-transform: capitalize;
+  left: 80px;
+  position: absolute;
+  top: 31px;
+  transition: transform 1s;
+}
+
+.arrow {
+  height: 50px;
+  position: absolute;
+  right: -52px;
+  visibility: hidden;
+  opacity: 0%;
+  transition: all 1s;
+}
+
+.apple {
+  height: 50px;
+  position: absolute;
+  left: 23px;
+  transition: transform 1s;
+}
+
+.container:hover > .arrow {
+  transform: translateX(-70px);
+  visibility: visible;
+  opacity: 100%;
+}
+.container:hover > .apple {
+  transform: translateX(-100px);
+}
+.container:hover > span {
+  transform: translateX(-50px);
+  position: absolute;
+}
+
+.container:hover {
+  animation: left-right 2s infinite;
+}
+
+@keyframes left-right {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
